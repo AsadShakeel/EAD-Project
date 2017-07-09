@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/CSS/bootstrap.css" rel="stylesheet" />
+    <link href="~/CSS/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.intellisense.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <a href="~/fonts/glyphicons-halflings-regular.svg"></a>
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+    <script src="~/JS/jquery.js"></script>
+    <script src="~/JS/bootstrap.js"></script>
+       <script type="text/javascript"></script>
+
+</head>
+<body>
+    <div>      
+        <nav class="navbar navbar-default" style=" height: 120px">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <img style="height:100px" class="navbar-brand" src="~/pictures/DXVO-P044594_Valdois_980x600.JPG" />
+                </div>
+                <ul class="nav navbar-nav">
+                    <li id="header1"><a href="/Home/Profile"> Profile</a></li>
+                    <li id="header1"><a href="/Home/UpdatePassword1">Update Password</a></li>
+                    <li id="header1"><a href="/Home/ReserveSeat">Reserve Your seat</a></li>
+                    <li class="dropdown" id="header1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View Your Reservations <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Home/ViewSeat">view Seat</a></li>
+                            <li><a href="/Home/UpdateSeat">update your reservation</a></li>
+                            <li><a href="/Home/DelSeat">delete your reservation</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="header1"><a href="/Home/Index">Logout</a></li>
+                </ul>
+                <form class="navbar-form navbar-left" method="post" action="/Home/SearchPage">
+                    <div class="form-group">
+                        <input type="text" name="search" class="form-control" placeholder="Search for a seat no">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+            </div>
+
+        </nav>
+
+
+        @RenderBody()
+    </div>
+</body>
+</html>

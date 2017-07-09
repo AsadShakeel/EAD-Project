@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "SearchPage";
+    Layout = "~/Views/Shared/_LayoutProfile.cshtml";
+}
+
+<h2>Search Results</h2>
+
+<table>
+    <tbody>
+        <tr>
+            <td style="padding-right:20px; border-right: 1px solid #ccc;">Seat no</td>
+            <td style="padding-right:20px; border-right: 1px solid #ccc;">Seat status</td>
+            <td style="padding-right:20px; border-right: 1px solid #ccc;">flight no</td>
+        </tr>
+        @foreach (var item in ViewBag.list)
+        {
+            <tr>
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">@item.seatno</td>
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">@item.seatStatus</td>
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">@item.flightno</td>
+            </tr>
+        }
+    </tbody>
+</table>

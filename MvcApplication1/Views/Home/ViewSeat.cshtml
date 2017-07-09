@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "ViewSeat";
+    Layout = "~/Views/Shared/_LayoutProfile.cshtml";
+}
+
+<h2>View Your Seat(s)</h2>
+
+
+<table>
+    <tbody>
+        <tr>
+            <td style="padding-right:20px; border-right: 1px solid #ccc;">uername</td>
+            <td style="padding-right:20px; border-right: 1px solid #ccc;">Seat no</td>
+            @*<td> </td>
+            <td>   </td>*@
+            <td style="padding-right:20px; border-right: 1px solid #ccc;">Flight no</td>
+            @*<td> </td>*@
+            <td>Seat Status</td>
+        </tr>
+        @foreach (var item in ViewBag.list )
+        {
+            <tr>
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">@Session["username"]</td>
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">   @item.seatno</td>
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">@item.flightno</td>
+               
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">@item.seatStatus</td>
+                @*<td><a href="/Home/CreateSeat/@item.seatno" id="reserve">Reserve</a></td>*@
+            </tr>
+        }
+    </tbody>
+</table>

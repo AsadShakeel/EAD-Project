@@ -1,0 +1,28 @@
+﻿@*@model MvcApplication1.Models.Reservation*@
+
+@{
+    ViewBag.Title = "CreateSeat";
+    Layout = "~/Views/Shared/_LayoutProfile.cshtml";
+}
+ 
+
+<div class="container" style="background-color:lightgray">
+    <h1 id="heading">Reserve Your Seat</h1>
+    <form method="post" action="/Home/AddSeat">
+        <div class="form-group">
+            <label id="type">your Seat no</label>
+            <input id="pass" value="@Session["seatnono"]" style="width:350px; margin-bottom:20px" type="text" class="form-control" placeholder="Current Seat no" readonly>
+            <span id="span"></span>
+        </div>
+        <button type="submit" id="btn" class="btn btn-success">Add Your seat</button>
+    </form>
+    <br /><br /><br /><br />
+    <br /><br />
+
+
+
+</div>
+
+
+
+

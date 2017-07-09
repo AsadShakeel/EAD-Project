@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "ReserveSeat";
+    Layout = "~/Views/Shared/_LayoutProfile.cshtml";
+}
+@*@model List<MvcApplication1.Models.Reservation>*@
+<h2 id="heading">Reserve Your Seat</h2>
+<table>
+    <tbody>
+        <tr>
+            
+            <td style="padding-right:20px; border-right: 1px solid #ccc;">Seat no </td>
+            <td style="padding-right:20px; border-right: 1px solid #ccc;" >Flight no</td>
+            <td style ="padding-right:20px; border-right: 1px solid #ccc;" >Seat Status</tdstyle>
+        </tr>
+        @foreach (var item in Model) { 
+            <tr>
+                
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">@item.seatno</td>
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">@item.flightno</td>
+                <td style="padding-right:20px; border-right: 1px solid #ccc;">@item.seatStatus</td>
+                <td style="padding-right:20px; border-right: 1px solid #ccc;"><a href="/Home/CreateSeat/@item.Id">Reserve</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

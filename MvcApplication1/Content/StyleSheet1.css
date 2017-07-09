@@ -1,0 +1,36 @@
+﻿body {
+}
+#header {
+    margin-top:40px;
+    font:200px;
+    font-size:x-large;
+    font-family:'Arial Rounded MT';
+    margin-left:20px;
+}
+#backimg {
+    opacity: 0.6;
+    filter: alpha(opacity=50);
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+}
+#r1 {
+    opacity:1;
+    filter: alpha(opacity=50);
+}
+#heading {
+    font-size:xx-large;
+    font-family:'Century Schoolbook';
+   
+}
+#type {
+    margin-top:23px;
+font-size:large;    font-family:Arial
+}
+#header1 {
+    
+    font:30px;
+    font-size:large;
+    font-family:'Arial Rounded MT';
+    margin-left:10px;
+}

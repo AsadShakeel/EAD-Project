@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "DelSeat";
+    Layout = "~/Views/Shared/_LayoutProfile.cshtml";
+}
+
+<h2>Delete your Seat</h2>
+
+<script>
+
+    $(document).ready(function () {
+        $("#pass").mouseout(function () {
+            var f = $("#pass").val();
+            $.getJSON("/Home/UpdateSeat3?seat=" + f, function (result) {
+                if (result == true) {
+                    $("#span").text("  ");
+                    $("#btn").prop("disabled", false);
+                }
+                else {
+                    $("#span").text("Sorry this seat no does not belong to you");
+                    $("#btn").prop("disabled", true);
+                }
+            })
+        })
+    })
+</script>
+
+
+<div class="container" style="background-color:lightgray">
+    <h1 id="heading">delete Your Seat</h1>
+    <form method="post" action="/Home/deleteSeat">
+        <div class="form-group">
+            <label id="type"> Enter your current Seat no</label>
+            <input id="pass" name="seatno" style="width:350px; margin-bottom:20px" type="text" class="form-control" placeholder="Current Seat no" required>
+            <span id="span"  style="color:white;  background-color:red; font-size:22px"></span>
+        </div>
+        <button type="submit" id="btn" class="btn btn-success">delete Seat</button>
+    </form>
+    <br /><br /><br /><br />
+    <br /><br />
+
+
+
+</div>

@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutProfile.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="container">
+        <span>@Session["pass"]</span>
+        <div class="row">
+            <div class="col-md-3" style="padding-right:20px; border-right: 1px solid #ccc;">
+                <h1 style="text-align:left">@Session["Username"]</h1>
+                <br /><br />
+                <h4>@Session["email"]</h4>
+                <br /><br />
+                <h3>Are you ready for the ride??</h3>
+                <h4>Reserve your seat now</h4>
+                <h4>Go to Reserve Your Seat</h4>
+            </div>
+            <div class="col-md-8">
+                <img id="backimg" src="~/pictures/photo-airplane-taking-off_1721170501.jpg" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

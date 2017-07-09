@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+
+<script type="text/javascript"></script>
+<script src="~/Scripts/jquery-1.7.1.intellisense.js"></script>
+@*<script>
+$(document).ready(function() {
+    var zp = $("#zipcode").val();
+    $("#zipcode").focusout(function () {
+        $.getJSON("/Home/Checkzip?zp="+zp, function (result) {
+            if (result == true) {
+                $("#Sub_btn").prop("disabled", true);
+                alert("Zip Code should contain 5-digts")
+            }
+            else {
+                $("#Sub_btn").prop("disabled", false);
+
+            }
+        });
+    });
+});
+
+    </script>*@
+
+
+<script>
+
+    $(document).ready(function () {
+        $("#zipcode").focusout(function () {
+            var f = $("#zipcode").val();
+            $.getJSON("/Home/Checkzip?zp=" + f, function (result) {
+                if (result == true) {
+
+                    $("#Sub_btn").prop("disabled", true);
+                    $("#span2").text("zip code should contain 5-digit code");
+                    
+                }
+                else {
+                    $("#Sub_btn").prop("disabled", false);
+                    $("#span2").text(" ");
+                }
+            })
+        })
+    })
+</script>
+
+
+<script>
+   
+    $(document).ready(function () {
+        $("#fname").focusout(function () {
+        var f = $("#fname").val();
+        $.getJSON("/Home/checkUsername?username=" + f, function (result) {
+            if (result == true) {
+                $("#span").text("Username already exists");
+
+                $("#Sub_btn").prop("disabled", true);
+            }
+            else {
+                $("#Sub_btn").prop("disabled", true);
+                $("#span").text("");
+            }
+        })
+        })
+    })
+</script>
+<script>
+   
+    $(document).ready(function () {
+        $("#Cp").focusout(function () {
+            var f = $("#ps").val();
+            var p = $("#Cp").val();
+         
+                if (f==p) {
+                    $("#Sub_btn").prop("disabled", true);
+                    $("#span1").text(" ");
+                }
+                else {
+                    $("#span1").text("password does not match");
+                    $("#Sub_btn").prop("disabled", true);
+                  
+                }
+        });
+    })
+</script>
+<div class="container" style="background-color:lightgray; background-size:cover ">
+    <h1 id="heading">Get Yourelf Register</h1>
+    <form method="post" action="/Home/SignUPFunc" class="form-group" style="background-color:lightgray; margin-left:100px; width:550px">
+        <div>
+            <div style="width:350px; margin-bottom:20px; margin-top:50px"><input id="fname" name="fn" type="text" placeholder="First Name" class="form-control" required /><span id="span" style="color:black; font:22px"></span></div>
+            <div style="width:350px; margin-bottom:20px"> <input type="text" name="ln" placeholder="Last Name" class="form-control" required /></div>
+        </div>
+        <div style="width:350px; margin-bottom:20px"><input name="email" type="email" placeholder="Enter Your Email" class="form-control" required /></div>
+        <div style="width:350px; margin-bottom:20px"><input name="pass" id="ps" type="password" placeholder="Enter your password" class="form-control" required /></div>
+        <div style="width:350px; margin-bottom:20px"><input name="Conpass" id="Cp" type="password" placeholder="Confirm your password" class="form-control" required /><span id="span1" style="color:white;  background-color:red; font-size:12px"></span></div>
+        <div style="width:350px; margin-bottom:20px"><input name="zipCode" id="zipcode" type="tel" placeholder="Enter your ZipCode" class="form-control" required /><span id="span2" style="color:white;  background-color:red; font-size:12px"></span></div>
+        <div style="width:350px; margin-bottom:20px"><button id="Sub_btn" type="submit" class="btn btn-primary">Register</button></div>
+    </form>
+    <br /><br /><br /><br /><br /><br /><br />
+</div>
